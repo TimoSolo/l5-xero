@@ -39,22 +39,22 @@ class XeroUpdateAll extends Command
         }
 
 
-        $this->queuePushForType($xero, 'ContactGroup', \Assemble\l5xero\Models\ContactGroup::where('ContactGroupID', null)->get());
+        // $this->queuePushForType($xero, 'ContactGroup', \Assemble\l5xero\Models\ContactGroup::where('ContactGroupID', null)->get());
         $this->queuePushForType($xero, 'Contact', \Assemble\l5xero\Models\Contact::where('ContactID', null)->get());
         $this->queuePushForType($xero, 'Item', \Assemble\l5xero\Models\Item::where('ItemID', null)->get());
         $this->queuePushForType($xero, 'Invoice', \Assemble\l5xero\Models\Invoice::where('InvoiceID', null)->get());
-        $this->queuePushForType($xero, 'Payment', \Assemble\l5xero\Models\Payment::where('PaymentID', null)->get());
-        $this->queuePushForType($xero, 'Overpayment', \Assemble\l5xero\Models\Overpayment::where('OverpaymentID', null)->get());
-        $this->queuePushForType($xero, 'Prepayment', \Assemble\l5xero\Models\Prepayment::where('PrepaymentID', null)->get());
+        // $this->queuePushForType($xero, 'Payment', \Assemble\l5xero\Models\Payment::where('PaymentID', null)->get());
+        // $this->queuePushForType($xero, 'Overpayment', \Assemble\l5xero\Models\Overpayment::where('OverpaymentID', null)->get());
+        // $this->queuePushForType($xero, 'Prepayment', \Assemble\l5xero\Models\Prepayment::where('PrepaymentID', null)->get());
 
-
-        dispatch(new XeroPull($xero, 'ContactGroup', 1, null, $since));
-        dispatch(new XeroPull($xero, 'Contact', 1, null, $since));
-        dispatch(new XeroPull($xero, 'Item', 1, null, $since));
-        dispatch(new XeroPull($xero, 'Invoice', 1, null, $since));
-        dispatch(new XeroPull($xero, 'Payment', 1, null, $since));
-        dispatch(new XeroPull($xero, 'Overpayment', 1, null, $since));
-        dispatch(new XeroPull($xero, 'Prepayment', 1, null, $since));
+        // TS: dont pull. Basis will do the sync now
+        // dispatch(new XeroPull($xero, 'ContactGroup', 1, null, $since));
+        // dispatch(new XeroPull($xero, 'Contact', 1, null, $since));
+        // dispatch(new XeroPull($xero, 'Item', 1, null, $since));
+        // dispatch(new XeroPull($xero, 'Invoice', 1, null, $since));
+        // dispatch(new XeroPull($xero, 'Payment', 1, null, $since));
+        // dispatch(new XeroPull($xero, 'Overpayment', 1, null, $since));
+        // dispatch(new XeroPull($xero, 'Prepayment', 1, null, $since));
 
     }
 
